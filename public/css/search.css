@@ -46,3 +46,16 @@ body {
         fill: #00F494;
         transition: 0.4s linear;
       }
+    .container .searchbox:focus-within {
+      max-width: 300px; }
+      .container .searchbox:focus-within .searchbox__input {
+        background-color: #FFF;
+        padding-right: 50px;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4); }
+      .container .searchbox:focus-within .searchbox__icon path {
+        fill: #24233A; }
+
+/* .container .searchbox .searchbox__icon path{
+  fill: #00F494;
+  transition: 0.4s linear;
+} */

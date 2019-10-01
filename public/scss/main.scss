@@ -58,7 +58,23 @@ body {
       pointer-events: none;
 
       path: {
-        fill: #00F494
+        fill: #00F494;
+        transition: 0.4s linear;
+      }
+    }
+    &:focus-within {
+      max-width: 300px;
+
+      .searchbox__input {
+        background-color: #FFF;
+        padding-right: 50px;
+        box-shadow: inset 0px 0px 10px rgba(0, 0 , 0, 0.4)
+      }
+
+      .searchbox__icon {
+        path {
+          fill: #24233A;
+        }
       }
     }
   }
