@@ -17,20 +17,40 @@
 <script src="/js/jquery.js"></script>
 <script src="/js/xlsx.full.min.js"></script>
 <script>
-        $(document).ready(function(){
-              $("#fileUploader").change(function(evt){
+        $(document).ready( async function(){
+              $("#fileUploader").change( async function(evt){
                     var selectedFile = evt.target.files[0];
                     var reader = new FileReader();
-                    reader.onload = function(event) {
+                    reader.onload = async function(event) {
                       var data = event.target.result;
                       var workbook = XLSX.read(data, {
                           type: 'binary'
                       });
-                      workbook.SheetNames.forEach(function(sheetName) {
-                        
+                      workbook.SheetNames.forEach( async function(sheetName) {
+
                           var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                          console.log(XL_row_object)
                           var json_object = JSON.stringify(XL_row_object);
-                          document.getElementById("jsonObject").innerHTML = json_object;
+
+                          const url = 'http://localhost:3000/data'
+
+                          try {
+                            const response = await fetch (url, {
+                              method: 'POST',
+                              body: json_object,
+                              headers: {
+                                'Content-Type': 'application/json'
+                              }
+                            })
+                            const json = await response.json()
+                            console.log('c')
+                          } catch (error) {
+                            console.error('Error', error)
+                          }
+
+
+
+                          document.getElementById("jsonObject").innerHTML = 'Enviado Correctamente'
                         })
                     };
                     reader.onerror = function(event) {
