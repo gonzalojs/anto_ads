@@ -17,9 +17,13 @@ app.set('view engine', 'hbs')
 
 app.use(logger('dev'))
 app.use('uploads', express.static('uploads'))
-app.use(bodyParser.json())
+app.use(bodyParser.json({
+  limit: '5mb'
+}))
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: true,
+  limit: '5mb',
+  parameterLimit: 100000
 }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
