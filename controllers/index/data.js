@@ -8,7 +8,15 @@ exports.data_post = (req, res) => {
     const element = req.body[index];
     const reg = /([^. — ]+)/
     let tit = reg.exec(Object.values(element))[0] //titulo
-    console.log(Object.values(element)[0].replace(tit, ''))
+    let body = Object.values(element)[0]
+    /* console.log(Object.values(element)[0].replace(tit, '')) */
+/*     console.log(typeof body) */
+
+    if (typeof body === 'string') {
+      console.log(Object.values(element)[0].replace(tit, ''))
+    } else {
+      console.log('no string')
+    }
 
 
 
