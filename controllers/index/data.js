@@ -6,17 +6,30 @@ exports.data_post = (req, res) => {
 
   const body = req.body
   let adsValues = []
+  let eliminados = 0
 
   for (let i = 0; i < body.length; i++) {
     const element = body[i];
     let val = Object.values(element)[0]
 
     if (typeof val === 'string') {
-      console.log(val)
+      adsValues.push(val)
+
+      console.log(body.length , adsValues.length + eliminados)
+
+
+
     } else {
-      console.log('----------------------------------------------------')
+      eliminados = eliminados + 1
     }
   }
+
+
+/*   setTimeout(() => {
+    console.log(adsValues)
+  }, 5000)
+
+ */
 
 
 /*
