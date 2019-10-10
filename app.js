@@ -44,7 +44,13 @@ require('./config/passport')(passport)
 app.use(passport.initialize())
 app.use(passport.session())
 
+global.api_data = [{
+  mensaje: 'estoy funcionando csm!'
+}]
+
+
 app.get('*', (req, res, next) => {
+  console.log(api_data)
   res.locals.user = req.user || null
   next()
 })

@@ -4,7 +4,13 @@ const { Types } = require('mongoose')
 
 exports.data_post = (req, res) => {
 
-  const body = req.body
+  const obje = {
+    mensaje: 'Soy un peperico y edito cosas'
+  }
+  api_data.push(obje)
+
+
+/*   const body = req.body
   let adsValues = []
   let eliminados = 0
 
@@ -22,7 +28,7 @@ exports.data_post = (req, res) => {
     } else {
       eliminados = eliminados + 1
     }
-  }
+  } */
 
 
 /*   setTimeout(() => {
