@@ -1,41 +1,28 @@
-const Ad = require('../../models/ad.model')
 const { Types } = require('mongoose')
 
 
 exports.data_post = (req, res) => {
 
-  const obje = {
-    mensaje: 'Soy un peperico y edito cosas'
-  }
-  api_data.push(obje)
 
-
-/*   const body = req.body
-  let adsValues = []
-  let eliminados = 0
+  const body = req.body
 
   for (let i = 0; i < body.length; i++) {
     const element = body[i];
     let val = Object.values(element)[0]
 
     if (typeof val === 'string') {
-      adsValues.push(val)
 
-      console.log(body.length , adsValues.length + eliminados)
-
-
+      const newObj = {
+        body: val,
+        _id: new Types.ObjectId()
+      }
+      api_data.push(newObj)
 
     } else {
-      eliminados = eliminados + 1
+      console.log('Not a string')
     }
-  } */
+  }
 
-
-/*   setTimeout(() => {
-    console.log(adsValues)
-  }, 5000)
-
- */
 
 
 /*
