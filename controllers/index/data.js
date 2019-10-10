@@ -1,4 +1,4 @@
-const { Types } = require('mongoose')
+const shortid = require('shortid')
 
 
 exports.data_post = (req, res) => {
@@ -14,7 +14,7 @@ exports.data_post = (req, res) => {
 
       const newObj = {
         body: val,
-        _id: new Types.ObjectId()
+        _id: shortid.generate()
       }
       api_data.push(newObj)
 
