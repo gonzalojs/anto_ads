@@ -6,3 +6,10 @@
 
 - Modificar api_data
 - call api_data y usarlo para crear un endpoint o simplemente para call en search
+
+
+Llenar la array api_data
+mandar el primer elemento a la DB
+cortar el primer elemento de api_data con shift()
+volver a llamar a la función al final de todo
+check si la array está limpia. Si lo está, no llamar a la función
