@@ -1,5 +1,5 @@
 const shortid = require('shortid')
-
+const Ad = require('../../models/ad.model')
 
 exports.data_post = (req, res) => {
 
@@ -23,7 +23,38 @@ exports.data_post = (req, res) => {
     }
   }
 
+  function adsToDb () {
+/*     console.log(api_data[0]) // Primer resultado */
 
+    Ad.find({'body': api_data[0].body})
+    .then((result) => {
+/*       if (result) {
+        console.log(result)
+      } else {
+        console.log('no encontrado')
+      } */
+      if (result > 0){
+        console.log('Este Ad Ya existe!!')
+      } else {
+
+        const ad = new Ad({
+          _id: api_data[0]._id,
+          body: api_data[0].body
+        })
+
+        ad.save()
+        return ad
+      }
+    })
+/*     .then(ad => console.log(ad)) */
+    .catch((err) => {
+      console.error(err)
+    })
+
+  }
+
+
+  setTimeout(adsToDb, 5000)
 
 /*
 
