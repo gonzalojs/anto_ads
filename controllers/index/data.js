@@ -28,25 +28,28 @@ exports.data_post = (req, res) => {
 
     Ad.find({'body': api_data[0].body})
     .then((result) => {
-/*       if (result) {
-        console.log(result)
-      } else {
-        console.log('no encontrado')
-      } */
-      if (result > 0){
+      if (result.length > 0){
         console.log('Este Ad Ya existe!!')
+        return result
       } else {
-
         const ad = new Ad({
           _id: api_data[0]._id,
           body: api_data[0].body
         })
 
         ad.save()
+        console.log('agregado')
         return ad
       }
     })
-/*     .then(ad => console.log(ad)) */
+    .then(re =>  {
+      api_data.shift()
+      if (api_data.length > 0) {
+        adsToDb()
+      } else {
+        console.log('Api_data etá vacía')
+      }
+    })
     .catch((err) => {
       console.error(err)
     })
