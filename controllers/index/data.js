@@ -24,8 +24,6 @@ exports.data_post = (req, res) => {
   }
 
   function adsToDb () {
-/*     console.log(api_data[0]) // Primer resultado */
-
     Ad.find({'body': api_data[0].body})
     .then((result) => {
       if (result.length > 0){
@@ -47,18 +45,15 @@ exports.data_post = (req, res) => {
       if (api_data.length > 0) {
         adsToDb()
       } else {
-        console.log('Api_data etá vacía')
+        console.log('Api_data está vacia')
       }
     })
     .catch((err) => {
       console.error(err)
     })
-
   }
-
-
   setTimeout(adsToDb, 5000)
-
+}
 /*
 
   for (let index = 0; index < req.body.length; index++) {
@@ -95,4 +90,3 @@ exports.data_post = (req, res) => {
 
 
   }*/
-}
