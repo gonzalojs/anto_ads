@@ -13,3 +13,8 @@ mandar el primer elemento a la DB
 cortar el primer elemento de api_data con shift()
 volver a llamar a la función al final de todo
 check si la array está limpia. Si lo está, no llamar a la función
+
+
+extraer text value de search.
+Post a algú route que crea la nueva url
+mover a la nueva url con los params de la search box
