@@ -15,7 +15,4 @@ async function search () {
     },
     body: JSON.stringify(searchV)
   })
-  const content = await postValue.json()
-
-  console.log(content)
 }

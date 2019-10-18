@@ -48,7 +48,6 @@ global.api_data = []
 
 
 app.get('*', (req, res, next) => {
-  console.log(api_data)
   res.locals.user = req.user || null
   next()
 })
