@@ -18,3 +18,6 @@ check si la array está limpia. Si lo está, no llamar a la función
 extraer text value de search.
 Post a algú route que crea la nueva url
 mover a la nueva url con los params de la search box
+
+
+TODO: search POST
