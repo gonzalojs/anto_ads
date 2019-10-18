@@ -1,3 +1,3 @@
 function search () {
-  console.log('estoy buscando ctm')
+  console.log(document.getElementById('searchs').value)
 }
