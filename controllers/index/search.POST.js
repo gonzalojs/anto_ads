@@ -3,9 +3,9 @@ exports.search_post = (req, res) => {
 
   if (body.length > 0) {
     let sp = body.split(' ')
-    let param = 'p='
+    let param = '&p='
     let joined = sp.join(param)
-    console.log(`http://localhost:3000/search?${joined}`)
+    console.log(`http://localhost:3000/search?p=${joined}`)
     res.redirect('/search')
   } else {
     console.log('esto está pelado')
