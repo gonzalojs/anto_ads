@@ -4,7 +4,11 @@ exports.search = (req, res) => {
 
   console.log(req.query)
 
-  Ad.find({})
+  Ad.find({
+    $text: {
+      $search: req.query.p[0]
+    }
+  })
   .then((result) => {
     res.render('search', {
       body: result

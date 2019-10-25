@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, index } = require('mongoose')
 
 const adSchema = Schema({
   _id: {
