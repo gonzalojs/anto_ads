@@ -4,8 +4,6 @@ exports.search = (req, res) => {
 
   console.log(req.query)
 
-
-  
   Ad.find({})
   .then((result) => {
     res.render('search', {

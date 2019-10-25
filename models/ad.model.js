@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose')
-const shortid = require('shortid')
 
 const adSchema = Schema({
   _id: {
@@ -8,5 +7,7 @@ const adSchema = Schema({
   },
   body: String
 })
-
+adSchema.index({
+  '$**': 'text'
+})
 module.exports = model('Ad', adSchema)
