@@ -6,7 +6,6 @@ async function search () {
   const searchV = {
     body: searchValue
   }
-/*   console.log(JSON.stringify(searchV)) */
   const postValue = await fetch('http://localhost:3000/search', {
     method: 'POST',
     headers: {
