@@ -9,10 +9,9 @@ exports.search = (req, res) => {
       $search: query
     }})
     .then((result) => {
-    query.push(result)
-    res.render('search', {
-      body: result
-    })
+      res.render('search', {
+        body: result
+      })
   }).catch((err) => {
     console.error(err)
   })
