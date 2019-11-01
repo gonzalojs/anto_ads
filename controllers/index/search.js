@@ -1,12 +1,11 @@
 const Ad = require('../../models/ad.model')
 
 exports.search = (req, res) => {
-
-  console.log(req.query)
+  const query = req.query.p.join()
 
   Ad.find({
     $text: {
-      $search: req.query.p[0]
+      $search: query
     }
   })
   .then((result) => {
