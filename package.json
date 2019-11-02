@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "css-build": "node-sass --omit-source-map-url public/scss/main.scss public/css/search.css",
+    "css-build": "node-sass --omit-source-map-url public/scss/styles.scss public/css/styles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },
