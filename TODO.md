@@ -21,3 +21,10 @@ mover a la nueva url con los params de la search box
 
 
 TODO: search POST
+
+
+TODO:
+  * Anto login & register paginas
+  * Cambiar el submit de anto a anto/submit
+  * Anto va a ser el panel principal, desde ahí puede ir a opciones o subir cosa
+  * opciones cambia las cosas de página: El título, el header, etc
