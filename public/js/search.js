@@ -1,3 +1,4 @@
+let boton = document.getElementById('boton')
 
 
 function search () {
@@ -12,3 +13,9 @@ function search () {
   }
 }
 
+/* on keys */
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode === 13) {
+    search()
+  }
+})
