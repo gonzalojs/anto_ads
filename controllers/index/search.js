@@ -13,7 +13,7 @@ exports.search = (req, res) => {
       }})
       .then((result) => {
         res.render('search', {
-          body: result
+          ads: result
         })
     }).catch((err) => {
       console.error(err)
