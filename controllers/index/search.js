@@ -28,8 +28,9 @@ exports.search = (req, res) => {
         $search: query
       }})
       .then((result) => {
+        console.log(result)
         res.render('search', {
-          body: result
+          ads: result
         })
     }).catch((err) => {
       console.error(err)
