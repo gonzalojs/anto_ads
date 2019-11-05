@@ -7,8 +7,8 @@ function search () {
 /*     console.log(split) */
     let pars = '&p='
     let join = split.join(pars)
-    console.log(join)
-    window.location.pathname = '/search?p' + join
+
+    window.location.href= '/search?p=' + join
   }
 }
 
