@@ -1,17 +1,12 @@
+let searchValue =  document.getElementById('searchs').value
 
-
-async function search () {
-
-  let searchValue = await document.getElementById('searchs').value
-  const searchV = {
-    body: searchValue
-  }
-  const postValue = await fetch('http://localhost:3000/search', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(searchV)
-  })
+function search () {
+  console.log(searchValue)
+/*   if ( searchValue.length > 0) {
+    let split = body.split(' ')
+    let pars = '&p='
+    let join = split.join(pars)
+    window.location.pathname = `/search?p${join}`
+  } */
 }
+
