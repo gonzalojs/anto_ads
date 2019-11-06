@@ -5,11 +5,12 @@ exports.search = (req, res) => {
 
   if (Array.isArray(req.query.p)) {
 
-    const query = req.query.p.join()
+    const query = req.query.p.join(' ')
+    console.log(query)
 
     Ad.find({
       $text: {
-        $search: query
+        $search: `\"${query}\"` //busca la frase completa
       }})
       .then((result) => {
         res.render('search', {
@@ -28,14 +29,12 @@ exports.search = (req, res) => {
         $search: query
       }})
       .then((result) => {
-        console.log(result)
         res.render('search', {
           ads: result
         })
-    }).catch((err) => {
-      console.error(err)
-    })
-
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   }
-
 }
