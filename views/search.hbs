@@ -1,3 +1,17 @@
 {{#each ads}}
-  <p>{{body}}</p><br>
+  <div class="card">
+  <div class="card-content">
+    <p class="subtitle">
+      {{body}}
+    </p>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">
+      <span>
+        View on <a href="/{id}">Twitter</a>
+      </span>
+    </p>
+
+  </footer>
+</div>
 {{/each}}
