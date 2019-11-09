@@ -5,33 +5,38 @@
 <div class="container is-fluid has-text-centered has-text-justified">
 <div class="columns is-multiline is-mobile is-vcentered">
 
-{{#each ads}}
-<div class="column
-is-12-mobile
-is-12-tablet
-is-one-third-desktop
-is-one-third-widescreen
-is-one-quarter-fullhd">
+  {{#if ads}}
+    <h1>Ads csm!!!!!</h1>
+  {{else}}
+    {{#each ads}}
+      <div class="column
+      is-12-mobile
+      is-12-tablet
+      is-one-third-desktop
+      is-one-third-widescreen
+      is-one-quarter-fullhd">
 
 
-  <div class="card has-background-white">
-  <div class="card-content">
-    <p class="subtitle">
-      {{body}}
-    </p>
-  </div>
-  <footer class="card-footer">
-    <p class="card-footer-item">
-      <span>
-        View on <a href="/{{_id}}">{{_id}}</a>
-      </span>
-    </p>
+        <div class="card purple">
+        <div class="card-content">
+          <p class="subtitle has-text-white-bis">
+            {{body}}
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              View on <a href="/{{_id}}">{{_id}}</a>
+            </span>
+          </p>
 
-  </footer>
-</div>
-</div>
+        </footer>
+      </div>
+      </div>
 
-{{/each}}
+    {{/each}}
+  {{/if}}
+
 
 
 
