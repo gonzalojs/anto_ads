@@ -13,8 +13,13 @@ exports.search = (req, res) => {
         $search: `\"${query}\"` //busca la frase completa
       }})
       .then((result) => {
+        let empty = false
+        if (result <= 0) {
+          empty = true
+        }
         res.render('search', {
-          ads: result
+          ads: result,
+          empty: empty
         })
     }).catch((err) => {
       console.error(err)
@@ -29,8 +34,13 @@ exports.search = (req, res) => {
         $search: query
       }})
       .then((result) => {
+        let empty = false
+        if (result >= 0) {
+          empty = true
+        }
         res.render('search', {
-          ads: result
+          ads: result,
+          empty: empty
         })
       })
       .catch((err) => {
