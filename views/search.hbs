@@ -6,9 +6,21 @@
 <div class="columns is-multiline is-mobile is-vcentered">
 
   {{#if empty}}
-    <h1>Ads csm!!!!!</h1>
+    <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Nope
+      </h1>
+      <h2 class="subtitle">
+        No se encontraron resultados
+      </h2>
+    </div>
+  </div>
+</section>
   {{else}}
     {{#each ads}}
+
       <div class="column
       is-12-mobile
       is-12-tablet
@@ -18,22 +30,15 @@
 
 
         <div class="card purple">
+              <a href="/{{_id}}">
         <div class="card-content">
           <p class="subtitle has-text-white-bis">
             {{body}}
           </p>
         </div>
-        <footer class="card-footer">
-          <p class="card-footer-item">
-            <span>
-              View on <a href="/{{_id}}">{{_id}}</a>
-            </span>
-          </p>
-
-        </footer>
+        </a>
       </div>
       </div>
-
     {{/each}}
   {{/if}}
 
