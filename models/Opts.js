@@ -2,12 +2,13 @@ const { Schema, model } = require('mongoose')
 
 const opsSchema = Schema({
   title: {
-    type: String,
-    required: true
+    type: String
   },
   header: {
-    type: String,
-    required: true
+    type: String
+  },
+  subtitle: {
+    type: String
   }
 })
 
