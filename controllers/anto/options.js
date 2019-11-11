@@ -14,7 +14,6 @@ exports.anto_options = (req, res, next) => {
         body: true
       })
     }
-
     console.log(!result)
     /*  TODO: Si no hay nada, render la post new. Si ya existe, render la mostrar    */
 

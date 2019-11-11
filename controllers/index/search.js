@@ -6,7 +6,6 @@ exports.search = (req, res) => {
   if (Array.isArray(req.query.p)) {
 
     const query = req.query.p.join(' ')
-    console.log(query)
 
     Ad.find({
       $text: {
