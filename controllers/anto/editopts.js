@@ -1,4 +1,4 @@
-const Ops = require('../../models/Opts')
+const Opts = require('../../models/Opts')
 
 exports.edit_opts = (req, res) => {
   let opts = {}
@@ -11,7 +11,7 @@ exports.edit_opts = (req, res) => {
     title: req.body.title
   }
 
-  Ops.update(query, opts)
+  Opts.update(query, opts)
   .then((result) => {
     res.redirect('/anto/options')
   }).catch((err) => {

@@ -12,4 +12,4 @@ const opsSchema = Schema({
   }
 })
 
-module.exports = model('Ops', opsSchema)
+module.exports = model('Opts', opsSchema)
