@@ -16,6 +16,6 @@ router.post('/data', dataController.data_post)
 router.get('/search', dataSearch.search)
 router.post('/search', searchPostController.search_post)
 
-router.get('/:id', getAdController.get_ad)
+router.get('/aviso/:id', getAdController.get_ad)
 
 module.exports = router
