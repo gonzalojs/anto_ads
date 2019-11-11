@@ -11,7 +11,8 @@ exports.anto_options = (req, res, next) => {
     } else {
       res.render('anto/options', {
         title: 'edita opciones',
-        body: true
+        body: true,
+        optsions: result
       })
     }
     console.log(!result)
