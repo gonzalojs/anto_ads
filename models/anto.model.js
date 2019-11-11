@@ -1,12 +1,11 @@
 const { Schema, model } = require('mongoose')
 
 const antoSchema = Schema({
-  _id: Schema.Types.ObjectId,
+  _id: String,
   username: {
     type: String,
     required: true
   },
-  email: String,
   password: {
     type: String,
     required: true
