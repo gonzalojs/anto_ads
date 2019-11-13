@@ -3,7 +3,7 @@ const Ad = require('../../models/ad.model')
 
 exports.data_post = (req, res) => {
 
-
+  let infor = []
   const body = req.body
 
   for (let i = 0; i < body.length; i++) {
@@ -16,7 +16,7 @@ exports.data_post = (req, res) => {
         body: val,
         _id: shortid.generate()
       }
-      api_data.push(newObj)
+      infor.push(newObj)
 
     } else {
       console.log('Not a string')
@@ -24,15 +24,15 @@ exports.data_post = (req, res) => {
   }
 
   function adsToDb () {
-    Ad.find({'body': api_data[0].body})
+    Ad.find({'body': infor[0].body})
     .then((result) => {
       if (result.length > 0){
         console.log('Este Ad Ya existe!!')
         return result
       } else {
         const ad = new Ad({
-          _id: api_data[0]._id,
-          body: api_data[0].body
+          _id: infor[0]._id,
+          body: infor[0].body
         })
 
         ad.save()
@@ -41,11 +41,11 @@ exports.data_post = (req, res) => {
       }
     })
     .then(re =>  {
-      api_data.shift()
-      if (api_data.length > 0) {
+      infor.shift()
+      if (infor.length > 0) {
         adsToDb()
       } else {
-        console.log('Api_data está vacia')
+        console.log('infor está vacia')
       }
     })
     .catch((err) => {
