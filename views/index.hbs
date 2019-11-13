@@ -1,64 +1,69 @@
-
 <head>
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/landing.css">
+  <link rel="stylesheet" type="text/css" href="/css/landing.css">
 </head>
 
 <body>
-        {{#if user}}
-    
-        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
-  <div class="container">
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a href="/" class="navbar-item">
-        Home
-      </a>
+  {{#if user}}
 
-      <a href="/anto" class="navbar-item">
-        Panel De Anto
-      </a>
-
-      <a href="/anto/options" class="navbar-item">
-        Opciones
-      </a>
-
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href="/anto/upload" class="button is-danger">
-            <strong>Subir</strong>
+  <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="/" class="navbar-item">
+            Home
           </a>
+
+          <a href="/anto" class="navbar-item">
+            Panel De Anto
+          </a>
+
+          <a href="/anto/options" class="navbar-item">
+            Opciones
+          </a>
+
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href="/anto/upload" class="button is-danger">
+                <strong>Subir</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  {{/if}}
+  <section class="hero  is-fullheight">
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-6 is-offset-3">
+          <h1 class="title">
+            {{header}}
+          </h1>
+          <h2 class="subtitle">
+            {{subtitle}}
+          </h2>
+          <div class="field is-grouped">
+            <p class="control is-expanded">
+              <input id="SA" class="input is-info" type="text" placeholder="Buscar">
+            </p>
+            <div class="control">
+              <button id="boton" onclick="search()" class="button is-danger"> Buscar </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-  </div>
-</nav>
-
-    {{/if}}
-    <section class="hero  is-fullheight">
-
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
-                        <div class="field is-grouped">
-                            <p class="control is-expanded">
-                                <input id="SA" class="input is-info" type="text" placeholder="Buscar">
-                            </p>
-                            <div class="control">
-                                <button id="boton" onclick="search()" class="button is-danger"> Buscar </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-    </section>
-    <script type="text/javascript" src="/js/search.js"></script>
+  </section>
+  <script type="text/javascript" src="/js/search.js"></script>
 </body>

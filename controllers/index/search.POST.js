@@ -10,4 +10,3 @@ exports.search_post = (req, res) => {
     console.log('esto está pelado')
   }
 }
-

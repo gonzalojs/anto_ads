@@ -1,108 +1,107 @@
-    {{#if user}}
-    
-        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+{{#if user}}
+
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
   <div class="container">
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a href="/" class="navbar-item">
-        Home
-      </a>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item">
+          Home
+        </a>
 
-      <a href="/anto" class="navbar-item">
-        Panel De Anto
-      </a>
+        <a href="/anto" class="navbar-item">
+          Panel De Anto
+        </a>
 
-      <a href="/anto/options" class="navbar-item">
-        Opciones
-      </a>
+        <a href="/anto/options" class="navbar-item">
+          Opciones
+        </a>
 
-    </div>
+      </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href="/anto/upload" class="button is-danger">
-            <strong>Subir</strong>
-          </a>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="/anto/upload" class="button is-danger">
+              <strong>Subir</strong>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
   </div>
 </nav>
 
-    {{/if}}
-
-{{#if body}}
-      <section class="hero  is-fullheight">
-
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
-                      <form action="/anto/edit" method="POST">
-                        <div class="field">
-                          <label class="label">Titulo</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="titulo" name="title">
-                          </div>
-                          <p class="help">Titulo actual: {{options.title}}</p>
-                        </div>
-                                                <div class="field">
-                          <label class="label">Header</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="header" name="header">
-                          </div>
-                          <p class="help">Header actual: {{options.header}} </p>
-                        </div>
-                                                <div class="field">
-                          <label class="label">Subtitulo</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="subtitulo" name="subtitle">
-                          </div>
-                          <p class="help">Sub actual: {{options.subtitle}} </p>
-                        </div>
-                        <input type="submit" name="" id="" value="Register" class="button is-danger">
-                      </form>
-                    </div>
-                </div>
-            </div>
-
-    </section>
-{{else}}
-      <section class="hero  is-fullheight">
-
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
-                      <form action="/anto/options" method="POST">
-                        <div class="field">
-                          <label class="label">Titulo</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="titulo" name="title">
-                          </div>
-                          <p class="help">El titulo se muestra en la ventana de la página</p>
-                        </div>
-                                                <div class="field">
-                          <label class="label">Header</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="header" name="header">
-                          </div>
-                          <p class="help">Encabezado opcional</p>
-                        </div>
-                                                <div class="field">
-                          <label class="label">Subtitulo</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="subtitulo" name="subtitle">
-                          </div>
-                          <p class="help">Subtitulo opcional</p>
-                        </div>
-                        <input type="submit" name="" id="" value="Register" class="button is-primary">
-                      </form>
-                    </div>
-                </div>
-            </div>
-
-    </section>
 {{/if}}
 
+{{#if body}}
+<section class="hero  is-fullheight">
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-6 is-offset-3">
+        <form action="/anto/edit" method="POST">
+          <div class="field">
+            <label class="label">Titulo</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="titulo" name="title">
+            </div>
+            <p class="help">Titulo actual: {{options.title}}</p>
+          </div>
+          <div class="field">
+            <label class="label">Header</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="header" name="header">
+            </div>
+            <p class="help">Header actual: {{options.header}} </p>
+          </div>
+          <div class="field">
+            <label class="label">Subtitulo</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="subtitulo" name="subtitle">
+            </div>
+            <p class="help">Sub actual: {{options.subtitle}} </p>
+          </div>
+          <input type="submit" name="" id="" value="Guardar" class="button is-danger">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+{{else}}
+<section class="hero  is-fullheight">
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-6 is-offset-3">
+        <form action="/anto/options" method="POST">
+          <div class="field">
+            <label class="label">Titulo</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="titulo" name="title">
+            </div>
+            <p class="help">El titulo se muestra en la ventana de la página</p>
+          </div>
+          <div class="field">
+            <label class="label">Header</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="header" name="header">
+            </div>
+            <p class="help">Encabezado opcional</p>
+          </div>
+          <div class="field">
+            <label class="label">Subtitulo</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="subtitulo" name="subtitle">
+            </div>
+            <p class="help">Subtitulo opcional</p>
+          </div>
+          <input type="submit" name="" id="" value="Guardar" class="button is-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
+{{/if}}
