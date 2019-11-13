@@ -26,7 +26,9 @@ app.use(bodyParser.urlencoded({
   parameterLimit: 100000
 }))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({
+  extended: false
+}))
 app.use(cookieParser(process.env.SESSION_SECRET))
 app.use(session({
   secret: process.env.SESSION_SECRET,
