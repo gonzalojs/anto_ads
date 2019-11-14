@@ -16,35 +16,41 @@ exports.search = (req, res) => {
         }})
         .then((result) => {
 
-          let objetos = []
+          let arrayOld = result
+          let arrayFinal = []
 
-          console.log(req.query.p.length, result.length)
-
-          for (let i = 0; i < result.length; i++) {
-            let objeto= {
-              body: result.body,
-              puntaje: 0
+          function looper (values) {
+            let itemsProcessed = 0
+            let objs = {
+              body: arrayOld[0].body,
+              valor: 0
             }
-            for (let j = 0; j < req.query.p.length; j++) {
-              if (condition) {
-                
-              } else {
-                
+            values.forEach(element => {
+              // TODO: aqui va todo lo extra
+              itemsProcessed++
+              if (itemsProcessed === values.length) {
+                arrayFinal.push(objs)
               }
-    
+            })
+          }
+
+
+
+          if (arrayOld <= 0) {
+            let empty = false
+            if (result <= 0) {  
+              empty = true
             }
-            
+            res.render('search', {
+              ads: result,
+              empty: empty
+            })
+          } else {
+
           }
 
 
-          let empty = false
-          if (result <= 0) {
-            empty = true
-          }
-          res.render('search', {
-            ads: result,
-            empty: empty
-          })
+
       }).catch((err) => {
         console.error(err)
       })
