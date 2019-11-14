@@ -8,14 +8,35 @@ exports.search = (req, res) => {
     const query = req.query.p.join(' ')
     const regexQuotes = /"((?:\\.|[^"\\])*)"/
     let checkQuotes = query.match(regexQuotes)
-    console.log(checkQuotes === null) //si no hay quotes, true
 
-    if (checkQuotes === null) {
-      Ad.find({
+    if (checkQuotes === null) {  /* sistema de puntos */
+      Ad.find({ //resultados sin quotes
         $text: {
-          $search: query //busca la frase completa
+          $search: query
         }})
         .then((result) => {
+
+          let objetos = []
+
+          console.log(req.query.p.length, result.length)
+
+          for (let i = 0; i < result.length; i++) {
+            let objeto= {
+              body: result.body,
+              puntaje: 0
+            }
+            for (let j = 0; j < req.query.p.length; j++) {
+              if (condition) {
+                
+              } else {
+                
+              }
+    
+            }
+            
+          }
+
+
           let empty = false
           if (result <= 0) {
             empty = true
@@ -47,9 +68,10 @@ exports.search = (req, res) => {
       })
     }
 
-  } else {
+  } else { //aqui solo es para palabras singulares
 
     const query = req.query.p
+    console.log('solo')
 
     Ad.find({
       $text: {
