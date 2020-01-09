@@ -13,7 +13,6 @@ html,body, button {
   line-height: 1.5;
 }
 
-.custom-color {
-  background-color: #88a43d;
+.custom-border {
   border-radius: 0% !important;
 }
