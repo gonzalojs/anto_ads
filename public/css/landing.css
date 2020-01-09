@@ -1,6 +1,6 @@
 
-html,body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+html,body, button {
+  font-family: 'EB Garamond', serif;
 }
 .hero.is-info {
   -webkit-background-size: cover;
@@ -11,4 +11,9 @@ html,body {
 .hero .subtitle {
   padding: 3rem 0;
   line-height: 1.5;
+}
+
+.custom-color {
+  background-color: #88a43d;
+  border-radius: 0% !important;
 }
