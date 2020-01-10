@@ -64,22 +64,15 @@
       is-one-third-widescreen
       is-one-quarter-fullhd">
 
-      <div class="card page">
+      <a href="/aviso/{{_id}}">
+      <div class="card">
         <div class="card-content">
           <p class="title is-4-fullhd is-4-widescreen is-4-desktop is-1-tablet is-1-mobile has-text-justified">
-            {{body}}...
+            {{body}}
           </p>
         </div>
-        <footer class="card-footer">
-          <p class="card-footer-item">
-            <span class="title is-5">
-              <a href="/aviso/{{_id}}">
-                <span class="title is-5-fullhd is-5-widescreen is-5-desktop is-3-tablet is-3-mobile">Seguir Leyendo
-                </span>
-              </a>
-          </p>
-        </footer>
       </div>
+      </a>
     </div>
     {{/each}}
     {{/if}}

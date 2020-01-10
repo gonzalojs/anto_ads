@@ -33,21 +33,8 @@ exports.search = (req, res) => {
               empty: true
             })
           }
-          let shortex = []
-          result.map(body => {
-            let shorty = {
-              body: body.body.substring(0, 150),
-              _id: body._id
-            }
-            /*               console.log(shorty) */
-            shortex.push(shorty)
-          })
-          return shortex
-        })
-        .then(shortex => {
-          console.log(shortex)
           res.render('search', {
-            ads: shortex,
+            ads: result,
             empty: false
           })
         })
@@ -69,21 +56,8 @@ exports.search = (req, res) => {
               empty: true
             })
           }
-          let shortex = []
-          result.map(body => {
-            let shorty = {
-              body: body.body.substring(0, 150),
-              _id: body._id
-            }
-            /*               console.log(shorty) */
-            shortex.push(shorty)
-          })
-          return shortex
-        })
-        .then(shortex => {
-          console.log(shortex)
           res.render('search', {
-            ads: shortex,
+            ads: result,
             empty: false
           })
         })
@@ -103,25 +77,14 @@ exports.search = (req, res) => {
         }
       })
       .then((result) => {
-        let empty = false
-        if (result >= 0) {
-          empty = true
+        if (result <= 0) {
+          res.render('search', {
+            ads: result,
+            empty: true
+          })
         }
-        let shortex = []
-        result.map(body => {
-          let shorty = {
-            body: body.body.substring(0, 150),
-            _id: body._id
-          }
-          /*               console.log(shorty) */
-          shortex.push(shorty)
-        })
-        return shortex
-      })
-      .then(shortex => {
-        console.log(shortex)
         res.render('search', {
-          ads: shortex,
+          ads: result,
           empty: false
         })
       })
