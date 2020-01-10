@@ -12,8 +12,6 @@ exports.search = (req, res) => {
 
     if (checkQuotes === null) {
 
-
-
       Ad.find({
           $text: {
             $search: query
@@ -28,20 +26,32 @@ exports.search = (req, res) => {
             "$meta": "textScore"
           }
         })
-        .limit(30)
         .then((result) => {
           if (result <= 0) {
             res.render('search', {
               ads: result,
               empty: true
             })
-          } else {
-            res.render('search', {
-              ads: result,
-              empty: false
-            })
           }
-        }).catch((err) => {
+          let shortex = []
+          result.map(body => {
+            let shorty = {
+              body: body.body.substring(0, 150),
+              _id: body._id
+            }
+            /*               console.log(shorty) */
+            shortex.push(shorty)
+          })
+          return shortex
+        })
+        .then(shortex => {
+          console.log(shortex)
+          res.render('search', {
+            ads: shortex,
+            empty: false
+          })
+        })
+        .catch((err) => {
           console.error(err)
         })
 
@@ -53,15 +63,31 @@ exports.search = (req, res) => {
           }
         })
         .then((result) => {
-          let empty = false
           if (result <= 0) {
-            empty = true
+            res.render('search', {
+              ads: result,
+              empty: true
+            })
           }
-          res.render('search', {
-            ads: result,
-            empty: empty
+          let shortex = []
+          result.map(body => {
+            let shorty = {
+              body: body.body.substring(0, 150),
+              _id: body._id
+            }
+            /*               console.log(shorty) */
+            shortex.push(shorty)
           })
-        }).catch((err) => {
+          return shortex
+        })
+        .then(shortex => {
+          console.log(shortex)
+          res.render('search', {
+            ads: shortex,
+            empty: false
+          })
+        })
+        .catch((err) => {
           console.error(err)
         })
     }
@@ -81,9 +107,22 @@ exports.search = (req, res) => {
         if (result >= 0) {
           empty = true
         }
+        let shortex = []
+        result.map(body => {
+          let shorty = {
+            body: body.body.substring(0, 150),
+            _id: body._id
+          }
+          /*               console.log(shorty) */
+          shortex.push(shorty)
+        })
+        return shortex
+      })
+      .then(shortex => {
+        console.log(shortex)
         res.render('search', {
-          ads: result,
-          empty: empty
+          ads: shortex,
+          empty: false
         })
       })
       .catch((err) => {

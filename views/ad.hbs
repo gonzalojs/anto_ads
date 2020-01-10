@@ -1,45 +1,58 @@
-    {{#if user}}
-    
-        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+<head>
+  <link rel="stylesheet" href="/css/card.css">
+</head>
+
+{{#if user}}
+
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
   <div class="container">
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a href="/" class="navbar-item">
-        Home
-      </a>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a href="/" class="navbar-item">
+          Home
+        </a>
 
-      <a href="/anto" class="navbar-item">
-        Panel De Anto
-      </a>
+        <a href="/anto" class="navbar-item">
+          Panel De Anto
+        </a>
 
-      <a href="/anto/options" class="navbar-item">
-        Opciones
-      </a>
+        <a href="/anto/options" class="navbar-item">
+          Opciones
+        </a>
 
-    </div>
+      </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href="/anto/upload" class="button is-danger">
-            <strong>Subir</strong>
-          </a>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="/anto/upload" class="button is-danger">
+              <strong>Subir</strong>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
   </div>
 </nav>
 
-    {{/if}}
+{{/if}}
 
-<section class="hero is-danger is-fullheight">
+<section class="hero is-fullheight">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
-        {{body}}
-      </h1>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="card">
+            <div class="card-content page">
+              <p class="title has-text-justified">
+                {{body}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
