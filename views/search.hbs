@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="/css/card.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 </head>
 
 {{#if user}}
@@ -38,23 +39,20 @@
 
 {{/if}}
 
+{{#if empty}}
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        No encontramos lo que buscas
+      </h1>
+    </div>
+  </div>
+</section>
+{{else}}
+
 <div class="container is-fluid has-text-centered has-text-justified">
   <div class="columns is-multiline is-vcentered">
-
-    {{#if empty}}
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Nope
-          </h1>
-          <h2 class="subtitle">
-            No se encontraron resultados
-          </h2>
-        </div>
-      </div>
-    </section>
-    {{else}}
     {{#each ads}}
 
     <div class="column
@@ -65,13 +63,13 @@
       is-one-quarter-fullhd">
 
       <a href="/aviso/{{_id}}">
-      <div class="card">
-        <div class="card-content">
-          <p class="title is-4-fullhd is-4-widescreen is-4-desktop is-1-tablet is-1-mobile has-text-justified">
-            {{body}}
-          </p>
+        <div class="card">
+          <div class="card-content">
+            <p class=" title is-4-fullhd is-4-widescreen is-4-desktop is-1-tablet is-1-mobile has-text-justified">
+              {{body}}
+            </p>
+          </div>
         </div>
-      </div>
       </a>
     </div>
     {{/each}}
