@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "css-build": "node-sass --omit-source-map-url public/scss/styles.scss public/css/styles.css",
     "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

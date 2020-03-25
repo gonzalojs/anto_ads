@@ -8,7 +8,7 @@ function search() {
     let pars = '&p='
     let join = split.join(pars)
 
-    window.location.href = '/search?p=' + join
+    window.location.href = '/buscar?p=' + join
   }
 }
 

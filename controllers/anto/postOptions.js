@@ -7,7 +7,6 @@ exports.post_opts = (req, res) => {
     _id: shortid.generate(),
     title: req.body.title,
     header: req.body.header,
-    subtitle: req.body.subtitle
   })
   opt.save(err => {
     if (err) {

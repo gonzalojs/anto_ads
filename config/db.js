@@ -1,4 +1,6 @@
-const { connect } =require('mongoose')
+const {
+  connect
+} = require('mongoose')
 require('dotenv').config()
 
 const uri = process.env.MONGO_URI
@@ -6,7 +8,9 @@ const uri = process.env.MONGO_URI
 const connectDB = async () => {
   try {
     await connect(uri, {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true
     })
     console.log('MongoDB connected')
   } catch (error) {

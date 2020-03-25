@@ -9,7 +9,6 @@ exports.edit_opts = (req, res) => {
 
       opts.title = req.body.title
       opts.header = req.body.header
-      opts.subtitle = req.body.subtitle
 
       let query = {
         _id: _id

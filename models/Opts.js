@@ -3,13 +3,12 @@ const { Schema, model } = require('mongoose')
 const opsSchema = Schema({
   _id: String,
   title: {
-    type: String
+    type: String,
+    trim: true
   },
   header: {
-    type: String
-  },
-  subtitle: {
-    type: String
+    type: String,
+    trim: true
   }
 })
 

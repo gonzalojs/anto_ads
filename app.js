@@ -46,7 +46,6 @@ require('./config/passport')(passport)
 app.use(passport.initialize())
 app.use(passport.session())
 
-
 app.get('*', (req, res, next) => {
   res.locals.user = req.user || null
   next()
@@ -55,5 +54,8 @@ app.get('*', (req, res, next) => {
 //import routes
 app.use('/', require('./routes/index.routes'))
 app.use('/anto', require('./routes/anto.routes'))
+
+
+
 
 module.exports = app
