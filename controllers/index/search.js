@@ -31,11 +31,13 @@ exports.search = (req, res) => {
                 ads: result,
                 empty: true
               })
+            } else {
+              res.render('search', {
+                ads: result,
+                empty: false
+              })
             }
-            res.render('search', {
-              ads: result,
-              empty: false
-            })
+
           })
           .catch((err) => {
             console.error(err)
@@ -54,11 +56,13 @@ exports.search = (req, res) => {
                 ads: result,
                 empty: true
               })
+            } else {
+              res.render('search', {
+                ads: result,
+                empty: false
+              })
             }
-            res.render('search', {
-              ads: result,
-              empty: false
-            })
+
           })
           .catch((err) => {
             console.error(err)
@@ -81,11 +85,13 @@ exports.search = (req, res) => {
               ads: result,
               empty: true
             })
+          } else {
+            res.render('search', {
+              ads: result,
+              empty: false
+            })
           }
-          res.render('search', {
-            ads: result,
-            empty: false
-          })
+
         })
         .catch((err) => {
           console.error(err)
