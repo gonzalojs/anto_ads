@@ -3,7 +3,7 @@ const {
 } = require('mongoose')
 require('dotenv').config()
 
-const uri = 'mongodb+srv://anto:antonimia1@antodb1.2r3hu.mongodb.net/antodb1?retryWrites=true&w=majority'
+const uri = process.env.MONGO_URI
 
 const connectDB = async () => {
   try {
