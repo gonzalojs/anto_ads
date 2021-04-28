@@ -35,36 +35,40 @@
         <div class="column is-8 has-text-centered">
           <div class="card">
             <div class="card-content">
-              <p
-                class="has-text-justified has-text-black has-text-weight-bold is-size-4-fullhd is-size-5-widescreen is-size-5-desktop is-size-4-mobile is-size-4-tablet">
-                {{body}}
-              </p>
+              <div class="columns is-vcentered">
+                <div class="column is-10">
+                  <p
+                    class="has-text-justified has-text-black has-text-weight-bold is-size-4-fullhd is-size-5-widescreen is-size-5-desktop is-size-4-mobile is-size-4-tablet">
+                    {{body}}
+                  </p>
+                </div>
+                <div class="column us-1 is-offset-1">
+
+                  <div>
+                    <span style="font-size: 36px;">
+                      <span class="icon">
+                        <a class="facebooka"><i class="fab fa-facebook-square" style="color:black !important;"></i></a>
+
+                      </span>
+
+                    </span>
+                  </div>
+                  <div>
+                    <span style="font-size: 36px;">
+                      <span class="icon">
+                        <a class="twittera">
+                          <i class="fab fa-twitter-square" style="color:black !important; margin-top: -5rem !important;"></i>
+                        </a>
+
+                      </span>
+                  </div>
+
+
+                </div>
+              </div>
             </div>
           </div>
-          <div class=" iconos has-text-centered">
 
-            {{!-- <span style="font-size: 36px;margin-top:2em;">
-              <span class="icon">
-                <a href="#"><i class="fab fa-instagram-square" style="color:black !important;"></i></a>
-
-              </span>
-
-            </span> --}}
-            <span style="font-size: 36px; margin-right:1em;">
-              <span class="icon">
-                <a><i class="fab fa-facebook-square" style="color:black !important;"></i></a>
-
-              </span>
-
-            </span>
-            <span style="font-size: 36px;">
-              <span class="icon">
-                <a>
-                  <i class="fab fa-twitter-square" style="color:black !important;"></i>
-                </a>
-
-              </span>
-          </div>
         </div>
       </div>
 
@@ -75,25 +79,26 @@
 <script>
   console.log(`{{body}}`)
 
-  const ffbtn = document.querySelector(".fa-facebook-square")
-  const twbtn = document.querySelector(".fa-twitter-square")
-  const igbtn = document.querySelector(".fa-instagram-square")
+  const ffbtn = document.querySelector(".facebooka")
+  const twbtn = document.querySelector(".twittera")
 
-  console.log(ffbtn, twbtn, igbtn)
+  console.log(ffbtn, twbtn)
 
   function init() {
     let postUrl = encodeURI(document.location.href)
     let postTitle = encodeURI("Mensaje de quiere usted casarse: ")
     let via = encodeURI("quiereustedcasarse")
+    let cuerpo = `{{body}}`
+
 
     ffbtn.setAttribute(
       'href',
-      `https://www.facebook.com/sharer.php?u=${postUrl}`
+      `https://www.facebook.com/sharer.php?u=${postUrl}/`
     )
 
     twbtn.setAttribute(
       'href',
-      `https://twitter.com/share?url=${postUrl}&text=${postTitle}&via=${via}`
+      `https://twitter.com/share?url=${postUrl}&text=${cuerpo}&via=${via}/`
     )
   }
 
