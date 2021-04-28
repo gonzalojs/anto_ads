@@ -1,13 +1,20 @@
-
-html,body, button {
+html,
+body,
+button {
   font-family: 'EB Garamond', serif;
 }
+
+a .fab {
+  color: #777 !important;
+  }
+
 .hero.is-info {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
 .hero .subtitle {
   padding: 3rem 0;
   line-height: 1.5;
@@ -17,10 +24,10 @@ html,body, button {
   border-radius: 0% !important;
 }
 
-.ups{
+.ups {
   margin-top: -90px;
 }
 
-.ups2{
+.ups2 {
   margin-top: -55px;
 }

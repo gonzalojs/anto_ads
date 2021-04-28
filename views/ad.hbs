@@ -32,13 +32,38 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-8">
+        <div class="column is-8 has-text-centered">
           <div class="card">
             <div class="card-content">
-              <p class="has-text-justified has-text-black has-text-weight-bold is-size-4-fullhd is-size-5-widescreen is-size-5-desktop is-size-4-mobile is-size-4-tablet">
+              <p
+                class="has-text-justified has-text-black has-text-weight-bold is-size-4-fullhd is-size-5-widescreen is-size-5-desktop is-size-4-mobile is-size-4-tablet">
                 {{body}}
               </p>
             </div>
+          </div>
+          <div class=" iconos has-text-centered">
+
+            {{!-- <span style="font-size: 36px;margin-top:2em;">
+              <span class="icon">
+                <a href="#"><i class="fab fa-instagram-square" style="color:black !important;"></i></a>
+
+              </span>
+
+            </span> --}}
+            <span style="font-size: 36px; margin-right:1em;">
+              <span class="icon">
+                <a><i class="fab fa-facebook-square" style="color:black !important;"></i></a>
+
+              </span>
+
+            </span>
+            <span style="font-size: 36px;">
+              <span class="icon">
+                <a>
+                  <i class="fab fa-twitter-square" style="color:black !important;"></i>
+                </a>
+
+              </span>
           </div>
         </div>
       </div>
@@ -46,3 +71,33 @@
     </div>
   </div>
 </section>
+
+<script>
+  console.log(`{{body}}`)
+
+  const ffbtn = document.querySelector(".fa-facebook-square")
+  const twbtn = document.querySelector(".fa-twitter-square")
+  const igbtn = document.querySelector(".fa-instagram-square")
+
+  console.log(ffbtn, twbtn, igbtn)
+
+  function init() {
+    let postUrl = encodeURI(document.location.href)
+    let postTitle = encodeURI("Mensaje de quiere usted casarse: ")
+    let via = encodeURI("quiereustedcasarse")
+
+    ffbtn.setAttribute(
+      'href',
+      `https://www.facebook.com/sharer.php?u=${postUrl}`
+    )
+
+    twbtn.setAttribute(
+      'href',
+      `https://twitter.com/share?url=${postUrl}&text=${postTitle}&via=${via}`
+    )
+  }
+
+  init()
+
+
+</script>
