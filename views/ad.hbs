@@ -87,18 +87,18 @@
   function init() {
     let postUrl = encodeURI(document.location.href)
     let postTitle = encodeURI("Mensaje de quiere usted casarse: ")
-    let via = encodeURI("quiereustedcasarse")
+    let via = encodeURI("quiereudcasarse")
     let cuerpo = `{{body}}`
 
 
     ffbtn.setAttribute(
       'href',
-      `https://www.facebook.com/sharer.php?u=${postUrl}/`
+      `https://www.facebook.com/sharer.php?u=${postUrl}`
     )
 
     twbtn.setAttribute(
       'href',
-      `https://twitter.com/share?url=${postUrl}&text=${cuerpo}&via=${via}/`
+      `https://twitter.com/share?url=${postUrl}&text=${cuerpo}&via=${via}`
     )
   }
 
